@@ -18,7 +18,7 @@ const (
 )
 
 var (
-	sf = NewSnowFlake(GetDefaultWorkID())
+	sf = New(GetDefaultWorkID())
 
 	Since = time.Date(2012, 1, 0, 0, 0, 0, 0, time.UTC).UnixNano() / nano
 )
@@ -34,10 +34,10 @@ func Init(id int64) {
 	if id == 0 {
 		id = GetDefaultWorkID()
 	}
-	sf = NewSnowFlake(id)
+	sf = New(id)
 }
 
-func NewSnowFlake(id int64) *SnowFlake {
+func New(id int64) *SnowFlake {
 	workerID := id
 	if id < 0 || id > MaxWorkerID {
 		workerID = (workerID%MaxWorkerID + MaxWorkerID) % MaxWorkerID

@@ -1,15 +1,3 @@
-# go-snowflake
-
-golang safe snowflake
-
-- fix timestamp rollback
-- resolve conflict
-- thread safe
-- parse timestamp by id
-
-## Usage
-
-```go
 package main
 
 import (
@@ -53,4 +41,3 @@ func main() {
 	method2()
 	method3()
 }
-```

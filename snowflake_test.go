@@ -9,7 +9,7 @@ import (
 )
 
 func init() {
-	sf = NewSnowFlake(111)
+	sf = New(111)
 }
 
 func TestUniqueID(t *testing.T) {
@@ -38,7 +38,7 @@ func TestBench(t *testing.T) {
 	lock := sync.Mutex{}
 	now := time.Now()
 
-	sf = NewSnowFlake(100)
+	sf = New(100)
 
 	wg := sync.WaitGroup{}
 	for i := 0; i < workerNum; i++ {
